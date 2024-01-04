@@ -1,4 +1,5 @@
 import Navbar from '@/components/shared/navbar';
+import Sidebar from '@/components/shared/sidebar';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -10,7 +11,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<div>
 			<Navbar />
-			{children}
+			<Sidebar />
+			<main className='w-full min-h-[80vh] relative top-[10vh] pl-72 p-4 bg-[#f6f9fc] dark:bg-[#1f1f1f]'>
+				<div className='h-[85vh] pl-8 rounded-md ml-4 bg-white dark:bg-black'>{children}</div>
+			</main>
 		</div>
 	);
 }
